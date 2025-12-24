@@ -1,0 +1,19 @@
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex 4782f62..1ca16d3 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -46,3 +46,13 @@[m [mcoverage.xml[m
+ *.cover[m
+ .hypothesis/[m
+ .pytest_cache/[m
+[32m+[m
+[32m+[m[32m# API Keys & Secrets[m
+[32m+[m[32m.env[m
+[32m+[m[32m.env.local[m
+[32m+[m[32m.env.*.local[m
+[32m+[m[32m*.key[m
+[32m+[m[32msecrets.json[m
+[32m+[m[32mconfig.json[m
+[32m+[m[32mcredentials.json[m
+[41m+[m

@@ -1,13 +1,17 @@
 import pypdf
 import google.generativeai as genai
+from dotenv import load_dotenv
+import os 
+load_dotenv()
+api_key = os.getenv("GEMINI_API_KEY")
 
-
-genai.configure(api_key="xx")
+genai.configure(api_key="")
 
 def main():
-    pdf_path = input("Enter syllabus file name: ")
+    pdf_path = "test/"
+    pdf_path += input("Enter syllabus file name: ")
     pdf_path += ".pdf"
-    course = input("Enter course name: ")
+    #course = input("Enter course name: ")
     text= extract_text_pypdf(pdf_path)
     response = api(text)
     print(response.text)
