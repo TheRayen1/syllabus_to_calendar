@@ -8,7 +8,7 @@ api_key = os.getenv("GEMINI_API_KEY")
 
 genai.configure(api_key="")
 
-def main():
+def parse():
     pdf_path = "test/"
     pdf_path += input("Enter syllabus Efile name: ")
     pdf_path += ".pdf"
@@ -56,4 +56,4 @@ def api(text, course_name):
     }, indent=2)
 
 if __name__ == "__main__":
-    main()
+    parse()
