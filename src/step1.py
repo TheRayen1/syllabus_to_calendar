@@ -16,6 +16,7 @@ def main():
     text= extract_text_pypdf(pdf_path)
     response = api(text, course_name)
     print(response)
+    return response
 
 def extract_text_pypdf(pdf_path):
     """Extract text from PDF using pypdf"""
