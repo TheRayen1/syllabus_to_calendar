@@ -58,7 +58,7 @@ def api(text):
                 "assignment_name": name.strip(),
                 "due_date": date.strip()
             })
-    print("Raw Gemini:", response.text)
+    #print("Raw Gemini:", response.text)
     return json.dumps({
 #        "course": course_name,  
         "assignments": assignments
