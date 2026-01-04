@@ -1,14 +1,17 @@
-import logo from './logo.png';
 import './App.css';
-import { useNavigate } from 'react-router-dom';
 import Home from './Home';
-import React, { useState} from 'react';  
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+import MainWork from './MainWork';
 
 
 function App() {
   return (
-    
-    <div> <Home></Home></div>);
+  <Router> 
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/main-work" element={<MainWork />} />
+    </Routes>
+  </Router> );   
 }
 
 export default App;
