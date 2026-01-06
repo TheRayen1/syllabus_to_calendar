@@ -15,6 +15,11 @@ function MainWork() {
         alert("retrieving successful!")
     const formData = new FormData();
     formData.append('pdf_file', selectedFile);
+    alert("retrived file! "+ selectedFile.name);
+
+    formData.append('course_name', name); 
+    alert("Sending this name: " + name);
+
     fetch('http://127.0.0.1:5000/upload', {
       method: 'POST',
       body: formData,
@@ -37,7 +42,7 @@ function MainWork() {
             type="file" 
             accept=".pdf"
             onChange={handleFileChange} 
-        />        </div>  
+        /></div>  
     <div> 
     <p>Enter Course Name: </p>
 

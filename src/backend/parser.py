@@ -17,8 +17,9 @@ genai.configure(api_key="")
 @app.route('/upload', methods= ['POST'])
 def test_upload():
     uploaded_file = request.files['pdf_file']
-    print("SALAMA ")
-    return jsonify({"message": f"Successfully received {uploaded_file.filename}"})
+    course_name = request.form.get('course_name')
+
+    return jsonify({"message": f"Successfully received {uploaded_file.filename} and {course_name}"})
 
 def parse():
     pdf_path = "test/"
