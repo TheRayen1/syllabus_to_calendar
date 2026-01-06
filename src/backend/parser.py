@@ -3,10 +3,22 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 import os 
 import json
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+
+app = Flask(__name__)
+CORS(app)
+
 load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
 
 genai.configure(api_key="")
+@app.route('/upload', methods= ['POST'])
+def test_upload():
+    uploaded_file = request.files['pdf_file']
+    print("SALAMA ")
+    return jsonify({"message": f"Successfully received {uploaded_file.filename}"})
 
 def parse():
     pdf_path = "test/"
@@ -62,7 +74,7 @@ def api(text):
     return json.dumps({
 #        "course": course_name,  
         "assignments": assignments
-    })#, indent=2
+    })
 
 if __name__ == "__main__":
-    parse()
+    app.run(port=5000)
